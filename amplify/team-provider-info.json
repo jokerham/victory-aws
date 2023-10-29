@@ -1,0 +1,32 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-victoryaws-dev-70529-authRole",
+      "UnauthRoleArn": "arn:aws:iam::694284123883:role/amplify-victoryaws-dev-70529-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::694284123883:role/amplify-victoryaws-dev-70529-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-victoryaws-dev-70529-deployment",
+      "UnauthRoleName": "amplify-victoryaws-dev-70529-unauthRole",
+      "StackName": "amplify-victoryaws-dev-70529",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:694284123883:stack/amplify-victoryaws-dev-70529/0b358fa0-24ee-11ee-9112-02a11200ba60",
+      "AmplifyAppId": "d6kubu8xeh1f5"
+    },
+    "categories": {
+      "auth": {
+        "victoryaws41fc9b31": {}
+      },
+      "function": {
+        "batchApproveMembers": {
+          "deploymentBucketName": "amplify-victoryaws-dev-70529-deployment",
+          "s3Key": "amplify-builds/batchApproveMembers-4a2b6b342f573336392f-build.zip"
+        }
+      },
+      "storage": {
+        "memberProfileImages": {}
+      },
+      "api": {
+        "victoryaws": {}
+      }
+    }
+  }
+}

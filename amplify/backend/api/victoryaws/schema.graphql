@@ -1,0 +1,101 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Institute @model 
+@auth(
+  rules: [
+    {
+      allow: groups
+      groups: ["AdminGroup"]
+      operations: [create, update, delete]
+    },
+    {
+      allow: owner,
+      ownerField: "representativeId"
+    },
+    {
+      allow: public,
+      operations: [read]
+    }
+  ]
+)
+{
+  id: ID!
+  title: String!
+  location: String
+  representativeId: String
+}
+
+type Members @model
+@auth(
+  rules: [
+    {
+      allow: groups
+      groups: ["AdminGroup"]
+      operations: [create, update, delete]
+    },
+    {
+      allow: owner,
+      ownerField: "congnitoId"
+    },
+    {
+      allow: public,
+      operations: [read, update]
+    }
+  ]
+)
+{
+  id: ID!
+  congnitoId: String,
+  name: String!
+  email: String!
+  contact: String
+  instituteId: String
+  weight: Float
+  approved: String
+  profileImageUrl: String
+}
+
+input BatchApproveMembersInput {
+  membersIds: [String]
+}
+
+type Mutation 
+{
+  batchApproveMembers(input: BatchApproveMembersInput) : String
+  @function(name: "batchApproveMembers-${env}")
+  @auth(
+    rules: [
+      {
+        allow: groups
+        groups: ["AdminGroup"]
+      }
+    ]
+  )
+}
+
+type Tournaments @model
+@auth(
+  rules: [
+    {
+      allow: groups
+      groups: ["AdminGroup"]
+      operations: [create, update, delete]
+    },
+    {
+      allow: public,
+      operations: [read]
+    }
+  ]
+)
+{
+  id: ID!
+  title: String!
+  location: String
+  eventDate: AWSDate
+  dueDate: AWSDate
+  rings: Int
+}
+
+# https://medium.com/@jan.hesters/creating-graphql-batch-operations-for-aws-amplify-with-appsync-and-cognito-ecee6938e8ee

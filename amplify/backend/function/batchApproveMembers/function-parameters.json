@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "api": {
+      "victoryaws": [
+        "Query",
+        "Mutation"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

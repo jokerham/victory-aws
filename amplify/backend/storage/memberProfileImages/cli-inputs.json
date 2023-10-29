@@ -1,0 +1,16 @@
+{
+  "resourceName": "memberProfileImages",
+  "policyUUID": "402aaa07",
+  "bucketName": "victoryaws2ff185e8d74e44fdbba84bf79591cef1",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
