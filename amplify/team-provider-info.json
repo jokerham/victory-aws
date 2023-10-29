@@ -18,7 +18,7 @@
       "function": {
         "batchApproveMembers": {
           "deploymentBucketName": "amplify-victoryaws-dev-70529-deployment",
-          "s3Key": "amplify-builds/batchApproveMembers-4a2b6b342f573336392f-build.zip"
+          "s3Key": "amplify-builds/batchApproveMembers-344b524d75577a47415a-build.zip"
         }
       },
       "storage": {
@@ -26,6 +26,12 @@
       },
       "api": {
         "victoryaws": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d6kubu8xeh1f5",
+          "type": "manual"
+        }
       }
     }
   }

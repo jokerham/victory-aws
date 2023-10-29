@@ -88,22 +88,11 @@
       "service": "Lambda"
     }
   },
-  "parameters": {
-    "AMPLIFY_function_batchApproveMembers_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "batchApproveMembers"
-        }
-      ]
-    },
-    "AMPLIFY_function_batchApproveMembers_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "batchApproveMembers"
-        }
-      ]
+  "hosting": {
+    "amplifyhosting": {
+      "providerPlugin": "awscloudformation",
+      "service": "amplifyhosting",
+      "type": "manual"
     }
   },
   "storage": {
